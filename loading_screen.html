@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Screen for Хмаринка Ніклюда</title>
+    <!-- import fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <!-- import styles -->
+    <link rel="stylesheet" href="https://n1clud3.github.io/styles/global.css">
+    <link rel="stylesheet" href="https://n1clud3.github.io/styles/nicloud/loading_screen.css" await>
+</head>
+<body>
+    <div id="content">
+        <img id="screenbg" src="" alt="background">
+        <div class="stats">
+            <span id="curmap">Поточна мапа: 🤔</span>
+        </div>
+        <div class="rules">
+            <b>Рандомне правило</b><br>
+            <span id="random_rule">якесь рандомне правило</span>
+        </div>
+        <div class="bottom">
+            <div class="title">Ви входите на MGE Sandbox (не варто було цього робити)...</div>
+        </div>
+    </div>
+    <script>
+        var screenshots = [
+          
+          "https://gdzchnik.github.io/papka/1.png",
+          "https://gdzchnik.github.io/papka/2.png",
+          "https://gdzchnik.github.io/papka/3.png",
+          "https://gdzchnik.github.io/papka/4.png",
+          "https://gdzchnik.github.io/papka/5.png",
+          "https://gdzchnik.github.io/papka/6.png",
+          "https://gdzchnik.github.io/papka/7.png",
+          "https://gdzchnik.github.io/papka/8.png",
+          "https://gdzchnik.github.io/papka/9.png",
+          "https://gdzchnik.github.io/papka/10.png",
+          "https://gdzchnik.github.io/papka/11.png",
+          "https://gdzchnik.github.io/papka/12.png",
+          "https://gdzchnik.github.io/papka/13.png",
+          "https://gdzchnik.github.io/papka/14.png",
+          "https://gdzchnik.github.io/papka/15.png",
+          "https://gdzchnik.github.io/papka/16.png",
+          "https://gdzchnik.github.io/papka/17.png",
+          "https://gdzchnik.github.io/papka/18.png",
+          "https://gdzchnik.github.io/papka/19.png",
+          "https://gdzchnik.github.io/papka/20.png",
+          "https://gdzchnik.github.io/papka/21.png",
+          "https://gdzchnik.github.io/papka/22.png",
+
+           
+
+        ];
+
+        var rules = [
+            "1.1 – Незнання правил не звільняє від відповідальності.",
+            "1.2 – У спірних ситуаціях (або якщо тут немає прописаного правила) останнє слово залишається за модераторами.",
+            "1.3 - Модератор має право змінювати тяжкість/термін покарання стосовно порушника залежно від кількості порушень цього правила/попереджень.",
+            "2.1 - Викликати модераторів/скаржитися на гравців з \"рофільної\" або жартівливої ​​причини заборонено.",
+            "2.2 - Брехати модераторам / дезінформувати модераторів заборонено.",
+            "4.1 – залишати пропи або ентіті лежати без діла заборонено.",
+            "4.2 - Будівлі, що сильно навантажують сервер або вбивають fps гравців будуть видалені.",
+            "4.3 - Prop block/push/kill заборонений. Виключення: ви вбили гравця гравіті-ганом.",
+            "4.4 - Забудова шляхів переміщення мапою, таких як тунелі заборонено.",
+            "5.1 - Spawn Abuse (вийшов зі спавну, пострілявся і біжиш назад в спавнзону) заборонений.",
+            "5.2 - Використання E2, Outfitter (використання скінів з некоректними хітбоксами) та PAC3 задля здобуття переваги над іншими гравцями заборонено.",
+            "5.3.1 - Використання нокліпу в цілях розгляду бази забороняється.",
+            "5.3.2 - Використання глюків/багів в цілях проникнення на базу заборонено.",
+            "5.3.3 - Шкодити базам гравців, які їх будують в білді заборонено. Це також означає, що гравці в ПВП режимі не мають нападати на бази інших гравців з бази білдера.",
+            "5.4 - Використання режиму будування в цілях допомоги ПВП-гравцям заборонена (наприклад: показувати ПВП-гравцям, де знаходиться їхній ворог)"
+        ];
+
+        setInterval(setBackground, 3000);
+        function setBackground() {
+            var selected_screenshot = screenshots[Math.floor(Math.random() * screenshots.length)];
+            document.getElementById("screenbg").src = selected_screenshot;
+        }
+
+        setInterval(writeRandomRule, 15000);
+        function writeRandomRule() {
+            var selected_rule = rules[Math.floor(Math.random() * rules.length)];
+            document.getElementById("random_rule").innerHTML = selected_rule;
+        }
+        
+        function GameDetails( servername, serverurl, mapname, maxplayers, steamid, gamemode, volume, language ) {
+            document.getElementById("curmap").innerHTML = "Поточна мапа: " + mapname;
+        }
+        
+        setBackground();
+        writeRandomRule();
+        
+    </script>
+</body>
+</html>
