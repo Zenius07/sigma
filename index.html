@@ -14,6 +14,11 @@
     <link rel="stylesheet" href="https://n1clud3.github.io/styles/nicloud/loading_screen.css" await>
 </head>
 <body>
+
+    <audio id="myAudio" src="/1.mp3" autoplay type="audio/mpeg"></audio>
+
+
+
     <div id="content">
         <img id="screenbg" src="" alt="background">
         <div class="stats">
@@ -28,10 +33,14 @@
         </div>
     </div>
     <script>
+
+        const audioElement = document.getElementById("myAudio");
+        audioElement.volume = 0.5; // Встановлюємо гучність на 50%
+
         var screenshots = [
           
 
-        
+
           "https://gdzchnik.github.io/papka/1.png",
           "https://gdzchnik.github.io/papka/2.png",
           "https://gdzchnik.github.io/papka/3.png",
