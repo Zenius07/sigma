@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <!-- import styles -->
     <link rel="stylesheet" href="https://raw.githubusercontent.com/Zenius07/sigma/refs/heads/main/global.css">
-    <link rel="stylesheet" href="https://raw.githubusercontent.com/Zenius07/sigma/refs/heads/main/loading_screen.css" await>
+    <link rel="stylesheet" href="https://zenius07.github.io/sigma/loading_screen.css" await>
 </head>
 <body>
     <div id="content">
@@ -90,3 +90,45 @@
     </script>
 </body>
 </html>
+
+<style>
+  body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    background: black;
+    color: white;
+  }
+
+  #content {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  #screenbg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .stats, .rules, .bottom {
+    position: relative;
+    z-index: 1;
+    padding: 1rem;
+    background-color: rgba(0,0,0,0.5);
+    margin: 1rem;
+    border-radius: 10px;
+  }
+
+  .bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+</style>
