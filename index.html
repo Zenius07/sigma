@@ -125,6 +125,28 @@
             text-align: center;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
+
+        .snowflake {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            filter: blur(1px);
+            animation: fall linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes fall {
+            from {
+                top: -10px;
+                opacity: 1;
+            }
+            to {
+                top: 100vh;
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -141,6 +163,10 @@
             <div class="title">Ви заходите на сервер 🍺Підпивас Сандбокс🍺</div>
         </div>
     </div>
+    <audio id="bgmusic" autoplay loop volume="0.5">
+        <source src="music.mp3" type="audio/mpeg">
+        Ваш браузер не підтримує аудіо елемент.
+    </audio>
     <script>
 
         var screenshots = [
@@ -194,6 +220,19 @@
         function GameDetails( servername, serverurl, mapname, maxplayers, steamid, gamemode, volume, language ) {
             document.getElementById("curmap").innerHTML = "Поточна мапа: " + mapname;
         }
+        
+        // Створення сніжинок
+        for (let i = 0; i < 50; i++) {
+            let snow = document.createElement('div');
+            snow.className = 'snowflake';
+            snow.style.left = Math.random() * 100 + '%';
+            snow.style.animationDuration = (Math.random() * 5 + 5) + 's';
+            snow.style.animationDelay = Math.random() * 5 + 's';
+            document.body.appendChild(snow);
+        }
+        
+        // Встановлення гучності музики
+        document.getElementById('bgmusic').volume = 0.5;
         
         setBackground();
         writeRandomRule();
